@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: NTQ
- * Date: 10/12/2015
- * Time: 4:39 PM
- */
+@extends('layouts.master')
+@section('title','Create User')
+
+@section('content')
+    <p class="bg-warning">Create user</p>
+@endsection

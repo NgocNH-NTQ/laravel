@@ -12,7 +12,11 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return View::make('users.index');
+        $data = array(
+            'name' => 'NgocNH',
+            'age' => '24'
+        );
+        return View::make('users.index',$data);
     }
 
     /**
@@ -22,7 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return View::make('users.create');
     }
 
     /**
