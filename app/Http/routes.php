@@ -13,3 +13,5 @@
 
 Route::get('/','UsersController@index');
 Route::get('/create','UsersController@create');
+Route::get('/show','UsersController@listUser');
+Route::get('/user','UsersController@listAllUser');

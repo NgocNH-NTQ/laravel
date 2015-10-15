@@ -20,6 +20,17 @@ class UsersController extends Controller
     }
 
     /**
+     * List users
+     */
+    public function listUser(){
+        return View::make('users.show');
+    }
+
+    public function listAllUser(){
+        return View::make('users.users');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
