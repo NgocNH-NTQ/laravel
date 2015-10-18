@@ -1,7 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Foundation\Http\FormRequest;
+use illuminate\html;
 use View;
+
+use App\Userss;
 
 class UsersController extends Controller
 {
@@ -27,7 +33,7 @@ class UsersController extends Controller
     }
 
     public function listAllUser(){
-        return View::make('users.users');
+        return View::make('users.listusers');
     }
 
     /**
@@ -48,7 +54,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $aryDatas = $request->all();
+        $user = new Userss();
+        $intIsOk = $user->save($aryDatas);
+        var_dump($intIsOk); die;
     }
 
     /**

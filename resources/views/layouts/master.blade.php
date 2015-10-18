@@ -80,7 +80,7 @@
                                             Dashboard</a></li>
                                     <li class="create"><a href="{{asset('/create')}}"><span class=" glyphicon glyphicon-plane"></span> Create</a></li>
                                     <li class="list"><a href="{{asset('/show')}}"><span class=" glyphicon glyphicon-cloud"></span> List User</a></li>
-                                    <li><a href="{{asset('/user')}}"><span class="glyphicon glyphicon-signal"></span> Show all</a></li>
+                                    <li><a href="{{asset('/listuser')}}"><span class="glyphicon glyphicon-signal"></span> Show all</a></li>
 
                                 </ul>
                             </div>

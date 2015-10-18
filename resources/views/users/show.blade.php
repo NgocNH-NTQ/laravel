@@ -26,8 +26,8 @@
             <td>New York, USA</td>
             <td>
                 <div class="action-buttons">
-                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a href="{{asset('/create')}}" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="#" class="trash" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
                 </div>
             </td>
         </tr>
