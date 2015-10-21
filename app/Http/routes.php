@@ -17,3 +17,5 @@ Route::get('/show','UsersController@listUser');
 Route::get('/listuser','UsersController@listAllUser');
 
 Route::post('/create','UsersController@store');
+
+Route::get('/{id}/edit','UsersController@edit');

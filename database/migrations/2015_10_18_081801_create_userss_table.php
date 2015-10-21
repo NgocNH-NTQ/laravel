@@ -21,6 +21,7 @@ class CreateUserssTable extends Migration
             $table->string('address');
             $table->timestamps();
         });
+
     }
 
     /**

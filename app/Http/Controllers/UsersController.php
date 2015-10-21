@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Foundation\Http\FormRequest;
 use illuminate\html;
+use App\Http\Requests\FormRequest;
 use View;
+use Session;
 
 use App\Userss;
 
@@ -29,7 +30,8 @@ class UsersController extends Controller
      * List users
      */
     public function listUser(){
-        return View::make('users.show');
+        $aryUserData = $this->objUser->getListUsers();
+        return View::make('users.show')->with('aryUsers',$aryUserData);
     }
 
     public function listAllUser(){
@@ -52,12 +54,17 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest $request)
     {
-        $aryDatas = $request->all();
+        $aryData = $request->all();
+        unset($aryData['_token']);
+
         $user = new Userss();
-        $intIsOk = $user->save($aryDatas);
-        var_dump($intIsOk); die;
+        $user->create($aryData);
+
+        Session::flash('message_success', 'Save successfully');
+        return Redirect('show');
+
     }
 
     /**
@@ -79,7 +86,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Userss::find($id)->toArray();
+
+        return View::make('users.create')->with('userData',$user);
     }
 
     /**
@@ -89,9 +98,14 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormRequest $request, $id)
     {
-        //
+        $aryData = $request->all();
+        echo '<pre>';
+        echo '<meta charset="utf-8">';
+        print_r($aryData);
+        echo '</pre>';
+        die('xxx');
     }
 
     /**
